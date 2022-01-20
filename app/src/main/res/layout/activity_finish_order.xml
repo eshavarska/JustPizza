@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FinishOrderActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/layout_order_summary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_app">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tv_order_summary_label"
+                android:textStyle="bold" />
+
+            <fragment
+                android:id="@+id/fragment_one"
+                android:name="com.example.justpizza.OrderSummaryFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/fragment_order_summary"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/layout_delivery_information"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_app">
+
+            <TextView
+                android:id="@+id/tv_order_data_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_container"
+                android:paddingBottom="@dimen/padding_container"
+                android:text="@string/label_order_data"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/edit_tv_customer_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_enter_name"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/edit_tv_customer_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_enter_phone"
+                android:inputType="phone" />
+
+            <EditText
+                android:id="@+id/edit_tv_customer_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_enter_email"
+                android:inputType="textEmailAddress" />
+
+            <TextView
+                android:id="@+id/tv_address_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_container"
+                android:paddingBottom="@dimen/padding_container"
+                android:text="@string/label_customer_address"
+                android:textStyle="bold" />
+
+            <Spinner
+                android:id="@+id/spinner_address_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </Spinner>
+
+            <EditText
+                android:id="@+id/edit_tv_customer_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_enter_address"
+                android:inputType="text" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edit_tv_delivery_date"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:hint="@string/hint_delivery_date"
+                    android:inputType="date" />
+
+                <ImageButton
+                    android:id="@+id/btn_choose_delivery_date"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@color/orange"
+                    android:src="@drawable/ic_action_date" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/edit_tv_delivery_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:hint="@string/hint_delivery_time"
+                    android:inputType="time" />
+
+                <ImageButton
+                    android:id="@+id/btn_choose_delivery_time"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@color/orange"
+                    android:src="@drawable/ic_action_time" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btn_submit_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/btn_finish_order"
+            android:textSize="@dimen/btn_text_size_medium" />
+
+    </LinearLayout>
+
+</ScrollView>

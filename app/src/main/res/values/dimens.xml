@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="btn_text_size_large">25sp</dimen>
+    <dimen name="btn_text_size_medium">18sp</dimen>
+    <dimen name="icon_height">30dp</dimen>
+    <dimen name="padding_app">20dp</dimen>
+    <dimen name="padding_container">10dp</dimen>
+    <dimen name="btn_increment_decrement_width">50dp</dimen>
+</resources>

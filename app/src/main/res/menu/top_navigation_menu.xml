@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".OrderActivity">
+
+    <item
+        android:id="@+id/action_pizzas_list"
+        android:orderInCategory="1"
+        android:title="@string/label_pizzas_menu_option"
+        android:icon="@drawable/ic_action_pizza"
+        app:showAsAction="always" />
+
+
+    <item
+        android:id="@+id/action_favourites"
+        android:orderInCategory="2"
+        android:title="@string/label_favourites_menu_option"
+        android:icon="@drawable/ic_action_favourites"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/action_cart"
+        android:orderInCategory="3"
+        android:title="@string/label_cart_menu_option"
+        android:icon="@drawable/ic_action_cart"
+        app:showAsAction="always"
+        />
+
+
+    <item
+        android:id="@+id/action_info"
+        android:orderInCategory="4"
+        android:title="@string/label_about_us_menu_option"
+        android:icon="@drawable/ic_action_info"
+        app:showAsAction="always" />
+
+
+
+<!--    <item-->
+<!--        android:id="@+id/action_settings"-->
+<!--        android:orderInCategory="6"-->
+<!--        android:title="@string/label_settings_menu_option"-->
+<!--        app:showAsAction="never" />-->
+
+
+
+</menu>

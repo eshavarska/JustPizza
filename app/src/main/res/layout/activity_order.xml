@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".OrderActivity">
+
+    <LinearLayout
+        android:id="@+id/views_container_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_app">
+
+        <LinearLayout
+            android:id="@+id/layout_chosen_pizza"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/padding_container"
+            android:paddingBottom="@dimen/padding_container">
+
+            <ImageButton
+                android:id="@+id/btn_back_to_pizzas"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/icon_height"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_action_back"
+                android:background="@color/transparent"
+                android:contentDescription="@string/back_button_content_description" />
+
+
+            <TextView
+                android:id="@+id/text_chosen_pizza"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:text="@string/text_chosen_pizza"
+                android:textStyle="bold"
+                />
+
+            <ImageButton
+                android:id="@+id/btn_add_remove_favourite"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/icon_height"
+                android:layout_weight="2"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_action_add_favourite"
+                android:background="@color/transparent"
+                android:contentDescription="@string/add_to_favourites_button_content_description" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/description_chosen_pizza"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/description_chosen_pizza"
+            android:textSize="@dimen/btn_text_size_medium"
+            android:textStyle="italic"
+            />
+
+
+        <RadioGroup
+            android:id="@+id/group_pizza_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checkedButton="@id/btn_just_pizza">
+
+            <RadioButton
+                android:id="@+id/btn_just_pizza"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_just_pizza"
+                android:onClick="onRadioButtonClicked"
+                />
+
+            <RadioButton
+                android:id="@+id/btn_pizza_with_additives"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"
+                android:text="@string/btn_pizza_with_additives" />
+
+        </RadioGroup>
+
+
+        <LinearLayout
+            android:id="@+id/layout_additives"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/padding_container"
+            android:paddingBottom="@dimen/padding_container"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_additives_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_additives"
+                android:paddingTop="@dimen/padding_container"
+                android:paddingBottom="@dimen/padding_container"
+                android:textStyle="bold"
+                />
+
+            <CheckBox
+                android:id="@+id/btn_additive_mushrooms"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/checkbox_additive_mushrooms"
+                android:onClick="onCheckBoxClicked"
+                />
+
+            <CheckBox
+                android:id="@+id/btn_additive_corn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/checkbox_additive_corn"
+                android:onClick="onCheckBoxClicked"
+                />
+
+            <CheckBox
+                android:id="@+id/btn_additive_pickles"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/checkbox_additive_pickles"
+                android:onClick="onCheckBoxClicked"
+                />
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/layout_quantity_calculation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/padding_container"
+            android:paddingBottom="@dimen/padding_container">
+
+            <TextView
+                android:id="@+id/tv_quantity_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_quantity"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btn_decrement"
+                android:layout_width="@dimen/btn_increment_decrement_width"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_quantity_label"
+                android:text="@string/btn_decrement"
+                android:textSize="@dimen/btn_text_size_large" />
+
+            <EditText
+                android:id="@+id/edit_tv_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_quantity_label"
+                android:layout_alignTop="@id/btn_decrement"
+                android:layout_alignBottom="@id/btn_decrement"
+                android:layout_toEndOf="@id/btn_decrement"
+                android:background="@null"
+                android:inputType="number"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="@string/text_quantity"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_increment"
+                android:layout_width="@dimen/btn_increment_decrement_width"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_quantity_label"
+                android:layout_toEndOf="@id/edit_tv_quantity"
+                android:text="@string/btn_increment"
+                android:textSize="@dimen/btn_text_size_large"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_price_calculation"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/padding_container"
+            android:paddingBottom="@dimen/padding_container">
+
+            <TextView
+                android:id="@+id/tv_total_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_total"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/tv_total_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_total"
+                />
+
+            <Button
+                android:id="@+id/btn_add_to_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_add_to_cart"
+                android:textSize="@dimen/btn_text_size_medium"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
